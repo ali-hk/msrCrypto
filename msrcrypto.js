@@ -8497,7 +8497,7 @@ function syncWorker() {
         try {
             result = msrcryptoWorker.jsCryptoRunner( { data: data });
         } catch (ex) {
-            this.onerror({ data: ex.description, type: "error" });
+            this.onerror({ data: ex.message, type: "error" });
             return;
         }
 
