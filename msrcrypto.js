@@ -8079,7 +8079,7 @@ if (typeof operations !== "undefined") {
     msrcryptoEcdsa.sign = function ( p) {
 
         var hashName = p.algorithm.hash.name,
-            curve = cryptoECC.createCurve(p.algorithm.namedCurve.toUpperCase()),
+            curve = cryptoECC.createCurve(p.keyHandle.algorithm.namedCurve.toUpperCase()),
             hashFunc = msrcryptoHashFunctions[hashName.toLowerCase()],
             digest = hashFunc.computeHash(p.buffer);
 
@@ -8091,7 +8091,7 @@ if (typeof operations !== "undefined") {
     msrcryptoEcdsa.verify = function ( p) {
 
         var hashName = p.algorithm.hash.name,
-            curve = cryptoECC.createCurve(p.algorithm.namedCurve.toUpperCase()),
+            curve = cryptoECC.createCurve(p.keyHandle.algorithm.namedCurve.toUpperCase()),
             hashFunc = msrcryptoHashFunctions[hashName.toLowerCase()],
             digest = hashFunc.computeHash(p.buffer);
 
