@@ -190,7 +190,7 @@ if (typeof operations !== "undefined") {
     msrcryptoEcdsa.sign = function ( /*@dynamic*/ p) {
 
         var hashName = p.algorithm.hash.name,
-            curve = cryptoECC.createCurve(p.algorithm.namedCurve.toUpperCase()),
+            curve = cryptoECC.createCurve(p.keyHandle.algorithm.namedCurve.toUpperCase()),
             hashFunc = msrcryptoHashFunctions[hashName.toLowerCase()],
             digest = hashFunc.computeHash(p.buffer);
 
@@ -202,7 +202,7 @@ if (typeof operations !== "undefined") {
     msrcryptoEcdsa.verify = function ( /*@dynamic*/ p) {
 
         var hashName = p.algorithm.hash.name,
-            curve = cryptoECC.createCurve(p.algorithm.namedCurve.toUpperCase()),
+            curve = cryptoECC.createCurve(p.keyHandle.algorithm.namedCurve.toUpperCase()),
             hashFunc = msrcryptoHashFunctions[hashName.toLowerCase()],
             digest = hashFunc.computeHash(p.buffer);
 
